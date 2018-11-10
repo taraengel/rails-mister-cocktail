@@ -1,11 +1,24 @@
-<h1><center>Cocktails</center></h1>
+<div class="card">
+  <h1><center>Cocktails</center></h1>
+</div>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li><center><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></center></li>
-  <li><%= link_to 'New', new_cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @cocktails.each do |cocktail| %>
+      <li><center><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></center></li>
+    <% end %>
+    <div class="card">
+      <li><center>
+        <%= link_to new_cocktail_path(@cocktail) do %>
+        <div class="container">
+          <i class="fa fa-plus"></i>
+          <p>Add a new cocktail</p>
+        </div>
+      <% end %>
+        </center></li>
+   </div>
+  </ul>
+
+<!-- <i class="far fa-plus"></i> -->
 
 
 
